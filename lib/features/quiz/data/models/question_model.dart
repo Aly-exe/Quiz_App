@@ -1,6 +1,6 @@
 class Question{
   String question;
-  Map<bool,dynamic> options;
+  Map<dynamic,bool> options;
   Question({
     required this.question,
     required this.options

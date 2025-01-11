@@ -19,7 +19,7 @@ class SocialMediaIcon extends StatelessWidget {
         onTap: ()async{
           await launchUrl(Uri.parse(url));
         },
-        child: Image.asset("$image", height: 20.w ,width: 40.w,),
+        child: Image.asset("$image", height: 30.h ,width: 40.w,),
       ),
     );
   }

@@ -399,7 +399,7 @@ class TextContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300.w,
+      width: 280.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -446,12 +446,11 @@ class AnswerOptionWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0)),
           child: Row(
             children: [
-              SizedBox(width: 10),
               CircleAvatar(
                   backgroundColor: ColorPallet.kSecondButtonBackgroundColor,
                   child: Text("${index + 1}",
                       style: TextStyle(
-                          fontSize: 10.sp,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                           color: Colors.white))),
               TextContainerWidget(

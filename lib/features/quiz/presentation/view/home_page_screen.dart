@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quizapp/core/constants/colors.dart';
 import 'package:quizapp/features/quiz/presentation/view/widgets/about_us_button.dart';
 import 'package:quizapp/features/quiz/presentation/view/widgets/lets_start_button_widget.dart';
@@ -12,13 +12,14 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorPallet.kBackgroundColor,
       appBar: AppBar(
-          title: const Text(
+          title:  Text(
             'Quiz App',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: ColorPallet.kGreenColor),
+            style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500, color: ColorPallet.kGreenColor),
           ),
           centerTitle: true,
           backgroundColor: Colors.transparent),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               height: 50,
@@ -26,7 +27,7 @@ class HomePage extends StatelessWidget {
             Image.asset(
               "assets/images/question_image.png",
               width: double.infinity,
-              height: 200,
+              height: 200.h,
               fit: BoxFit.contain,
             ),
             SizedBox(
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
             ),
             LetsStart()
             ,SizedBox(
-              height: 20,
+              height: 20.h,
             ),
             AboutUsButton()
 

@@ -1,6 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quizapp/core/constants/colors.dart';
 import 'package:quizapp/features/quiz/data/models/questions_list.dart';
 import 'package:quizapp/features/quiz/presentation/view/home_page_screen.dart';
@@ -55,28 +55,33 @@ class _QuestionScreenState extends State<QuestionScreen> {
                             padding: const EdgeInsets.all(12.0),
                             child: Row(
                               children: [
+                                // exit widget
                                 InkWell(
                                   onTap: () {
                                     setState(() {
                                       exitShow = true;
                                     });
                                   },
-                                  child: CircleAvatar(
-                                      backgroundColor:
-                                          ColorPallet.kButtonBackgroundColor,
-                                      child: Icon(Icons.exit_to_app,
-                                          color: ColorPallet.kGreenColor)),
+                                  child: Container(
+                                    height: 40.h,
+                                    width: 50.w,
+                                    decoration: BoxDecoration(
+                                      color: ColorPallet.kButtonBackgroundColor,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Icon(Icons.exit_to_app , color: ColorPallet.kGreenColor,size: 16.w,),
+                                  ),
                                 ),
                                 Spacer(),
                                 Text('السؤال ${index + 1} ',
                                     style: TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.w600,
                                         color: ColorPallet.kGreenColor)),
                                 Spacer(),
                                 Text('النتيجه ${score}/10 ',
                                     style: TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.w600,
                                         color: ColorPallet.kGreenColor)),
                               ],
@@ -85,12 +90,14 @@ class _QuestionScreenState extends State<QuestionScreen> {
                           SizedBox(
                             height: height * .025,
                           ),
+                          // Question
                           TextContainerWidget(
                               text: questionsList[questionNumbers[index]]
                                   .question),
                           SizedBox(
                             height: height * .025,
                           ),
+                          // Answer
                           Container(
                             height: height * .5,
                             child: ListView.builder(
@@ -171,17 +178,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                     },
                                     child: Container(
                                       height: height * .05,
-                                      width: 250,
+                                      width: 250.w,
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
                                           color: ColorPallet
                                               .kSecondButtonBackgroundColor,
                                           borderRadius: BorderRadius.circular(20)),
                                       child: Text(
-                                        "السؤال التالي",
+                                        "السؤال التالى",
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 20,
+                                            fontSize: 16.sp,
                                             fontWeight: FontWeight.w600),
                                       ),
                                     ),
@@ -194,11 +201,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                         reloadDialog=true;
                                       });
                                     },
-                                    child: CircleAvatar(
-                                        backgroundColor:
-                                            ColorPallet.kButtonBackgroundColor,
-                                        child: Icon(Icons.replay_outlined,
-                                            color: ColorPallet.kGreenColor)),
+                                    child: Container(
+                                    height: 40.h,
+                                    width: 50.w,
+                                    decoration: BoxDecoration(
+                                      color: ColorPallet.kButtonBackgroundColor,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Icon(Icons.replay_outlined , color: ColorPallet.kGreenColor,size: 16.w,),
+                                  ),
                                   ),
                               ],
                             ),
@@ -214,8 +225,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                         textDirection: TextDirection.rtl,
                         child: Center(
                           child: Container(
-                            width: 240,
-                            height: 300,
+                            width: 200.w,
+                            height: 250.h,
                             decoration: BoxDecoration(
                                 color: ColorPallet.kButtonBackgroundColor,
                                 borderRadius: BorderRadius.circular(30.0)),
@@ -227,7 +238,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                   Text(
                                     "أنت علي وشك المغادره ! \n إنهاء الاختبار ؟",
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 16.sp,
                                       color: Colors.white,
                                     ),
                                     textAlign: TextAlign.center,
@@ -244,17 +255,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                                   HomePage()));
                                     },
                                     child: Container(
-                                      width: 100,
+                                      width: 100.w,
                                       decoration: BoxDecoration(
                                         color: ColorPallet.kCorrectAnswer,
                                         borderRadius:
                                             BorderRadius.circular(30.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(6),
+                                        padding: EdgeInsets.all(6.w),
                                         child: Text(
                                           "نعم",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.white,fontSize: 14.sp),
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -270,17 +281,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                       });
                                     },
                                     child: Container(
-                                      width: 100,
+                                      width: 100.w,
                                       decoration: BoxDecoration(
                                         color: ColorPallet.kwrongAnswer,
                                         borderRadius:
                                             BorderRadius.circular(30.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(6),
+                                        padding: EdgeInsets.all(6.w),
                                         child: Text(
                                           "لا",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.white,fontSize: 14.sp),
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -297,8 +308,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                         textDirection: TextDirection.rtl,
                         child: Center(
                           child: Container(
-                            width: 240,
-                            height: 300,
+                            width: 200.w,
+                            height: 250.h,
                             decoration: BoxDecoration(
                                 color: ColorPallet.kButtonBackgroundColor,
                                 borderRadius: BorderRadius.circular(30.0)),
@@ -310,7 +321,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                   Text(
                                     "هل تريد إعادة الاختبار ؟",
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 16.sp,
                                       color: Colors.white,
                                     ),
                                     textAlign: TextAlign.center,
@@ -327,17 +338,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                                   QuestionScreen()));
                                     },
                                     child: Container(
-                                      width: 100,
+                                      width: 100.w,
                                       decoration: BoxDecoration(
                                         color: ColorPallet.kCorrectAnswer,
                                         borderRadius:
                                             BorderRadius.circular(30.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(6),
+                                        padding: EdgeInsets.all(6.h),
                                         child: Text(
                                           "نعم",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.white ,fontSize: 14.sp),
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -353,17 +364,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                       });
                                     },
                                     child: Container(
-                                      width: 100,
+                                      width: 100.w,
                                       decoration: BoxDecoration(
                                         color: ColorPallet.kwrongAnswer,
                                         borderRadius:
                                             BorderRadius.circular(30.0),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(6),
+                                        padding: EdgeInsets.all(6.h),
                                         child: Text(
                                           "لا",
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.white, fontSize: 14.sp),
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -388,6 +399,7 @@ class TextContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 300.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -396,7 +408,7 @@ class TextContainerWidget extends StatelessWidget {
         child:  Text(
             text,
             maxLines: 2,
-            style: TextStyle(fontSize: 18, color: Colors.white),
+            style: TextStyle(fontSize: 15.sp, color: Colors.white),
           ),
       ),
     );
@@ -439,7 +451,7 @@ class AnswerOptionWidget extends StatelessWidget {
                   backgroundColor: ColorPallet.kSecondButtonBackgroundColor,
                   child: Text("${index + 1}",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.w600,
                           color: Colors.white))),
               TextContainerWidget(
@@ -462,8 +474,8 @@ class ScoreWidget extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Center(
         child: Container(
-          width: 240,
-          height: 300,
+          width: 240.w,
+          height: 300.h,
           decoration: BoxDecoration(
               color: ColorPallet.kButtonBackgroundColor,
               borderRadius: BorderRadius.circular(30.0)),
@@ -472,10 +484,10 @@ class ScoreWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                 Text(
                   "النتيجه",
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       color: ColorPallet.kGreenColor,
                       fontWeight: FontWeight.w600),
                 ),
@@ -485,7 +497,7 @@ class ScoreWidget extends StatelessWidget {
                 Text(
                   "${score}/10",
                   style:
-                      TextStyle(color: ColorPallet.kGreenColor, fontSize: 20),
+                      TextStyle(color: ColorPallet.kGreenColor, fontSize: 20.sp),
                 ),
                 const SizedBox(
                   height: 10,
@@ -499,7 +511,7 @@ class ScoreWidget extends StatelessWidget {
                               ? "أداء ممتاز ! اقتربت من الكمال."
                               : "تهانينا ! لقد حصلت على الدرجة الكاملة!",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16.sp,
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.center,
@@ -513,16 +525,16 @@ class ScoreWidget extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   child: Container(
-                    width: 100,
+                    width: 100.w,
                     decoration: BoxDecoration(
                       color: ColorPallet.kSecondButtonBackgroundColor,
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(6),
+                      padding: EdgeInsets.all(6.h),
                       child: Text(
                         "الرئيسيه",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white,fontSize: 16.sp),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -539,16 +551,16 @@ class ScoreWidget extends StatelessWidget {
                             builder: (context) => QuestionScreen()));
                   },
                   child: Container(
-                    width: 100,
+                    width: 100.w,
                     decoration: BoxDecoration(
                       color: ColorPallet.kSecondButtonBackgroundColor,
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(6),
+                      padding: EdgeInsets.all(6.h),
                       child: Text(
                         "إعادة الاختبار",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, fontSize: 16.sp),
                         textAlign: TextAlign.center,
                       ),
                     ),

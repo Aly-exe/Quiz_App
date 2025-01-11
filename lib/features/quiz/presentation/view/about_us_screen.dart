@@ -1,5 +1,5 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quizapp/core/constants/colors.dart';
 import 'package:quizapp/features/quiz/presentation/view/widgets/social_media_icon_widget.dart';
 
@@ -11,13 +11,13 @@ class AboutUs extends StatelessWidget {
     return SafeArea(child: Scaffold(
       backgroundColor: ColorPallet.kBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30 ,  vertical: 30 ),
+        padding: EdgeInsets.symmetric(horizontal: 30 ,  vertical: 40.h ),
     child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: 300,
-              height: 350,
+              width: 300.h,
+              height: 350.h,
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage("assets/images/Ali.jpeg"), fit: BoxFit.cover),
                 border: Border.all(
@@ -28,13 +28,11 @@ class AboutUs extends StatelessWidget {
               ),
             )
             ,const SizedBox(height: 30,),
-            Text("Ali Sayed",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700, color: Colors.white),),
+            Text("Ali Sayed",style: TextStyle(fontSize: 40.sp,fontWeight: FontWeight.w700, color: Colors.white),),
             const SizedBox(height: 10,),
-            Text("Software Engineer (Flutter Developer)",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white))
-            ,const SizedBox(height: 5,),
-            Text("Developed More than 10 Mobile App ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white))
+            Text("Software Engineer (Flutter Developer)",style: TextStyle(fontSize: 16.sp,fontWeight: FontWeight.w500,color: Colors.white))
             ,const SizedBox(height: 15,),
-            Text("You wil find me there",style: TextStyle(fontSize: 22,color: ColorPallet.kCorrectAnswer ,fontWeight: FontWeight.w500))
+            Text("You wil find me there",style: TextStyle(fontSize: 22.sp,color: ColorPallet.kCorrectAnswer ,fontWeight: FontWeight.w500))
             ,const SizedBox(height: 10,)
             , Container(height: 2, width: 260, color: Colors.grey,child: SizedBox(),)
             ,const SizedBox(height: 15,),

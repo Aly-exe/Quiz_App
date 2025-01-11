@@ -35,7 +35,7 @@ class AboutUs extends StatelessWidget {
             Text("You wil find me there",style: TextStyle(fontSize: 22.sp,color: ColorPallet.kCorrectAnswer ,fontWeight: FontWeight.w500))
             ,const SizedBox(height: 10,)
             , Container(height: 2, width: 260.w, color: Colors.grey,child: SizedBox(),)
-            ,const SizedBox(height: 15,),
+            , SizedBox(height: 20.h,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children:[

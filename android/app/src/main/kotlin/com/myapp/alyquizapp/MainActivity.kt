@@ -1,4 +1,4 @@
-package com.new.alyquizapp
+package com.myapp.alyquizapp
 
 import io.flutter.embedding.android.FlutterActivity
 
